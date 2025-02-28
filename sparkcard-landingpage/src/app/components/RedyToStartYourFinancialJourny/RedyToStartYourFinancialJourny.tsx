@@ -21,7 +21,7 @@ export default function RedyToStartYourFinancialJourny(
   const [email, setEmail] = useState("");
   const {sectionTitle,message,btnText,attention}=allData
 
-  const handleSubmit = async(e: any) => {
+  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const response = await fetch("http://localhost:3000/api/user", {
