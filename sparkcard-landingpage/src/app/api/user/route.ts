@@ -1,4 +1,4 @@
-import {prisma} from "@/app/lib/db";
+import prisma from "@/app/lib/db";
 import { NextResponse, NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
@@ -19,8 +19,5 @@ export async function POST(request: NextRequest) {
       message: "Post Added successfully",
       post: newUser,
     });
-  } catch (error) {
-    console.error("Error querying database:", error);
-    return new Response(JSON.stringify({ error: "Internal Server Error" }), { status: 500 });
-  }
+  } catch {}
 }
